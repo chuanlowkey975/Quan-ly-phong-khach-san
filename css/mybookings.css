@@ -1,0 +1,182 @@
+/* ============================================================= */
+/* css/mybookings.css – TRANG PHÒNG ĐÃ ĐẶT – ĐỒNG BỘ VỚI ROOMS.PHP */
+/* Phong cách: Ninh Chuẩn Hotel – Sang trọng – Tinh tế – 2025     */
+/* ============================================================= */
+
+:root {
+    --primary: #5d8b47;
+    --primary-dark: #3d6b2a;
+    --accent: #a8c997;
+    --gold: #d4af37;
+    --gold-dark: #b8972e;
+    --light: #f8fbe8;
+    --gray: #555;
+    --gray-light: #888;
+    --danger: #dc3545;
+    --success: #28a745;
+    --warning: #ffc107;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: var(--light);
+    color: #333;
+    min-height: 100vh;
+    padding-top: 100px;
+}
+
+/* ==================== NAVBAR (giống rooms.php) ==================== */
+.navbar-custom {
+    background: rgba(93,139,71,0.98) !important;
+    backdrop-filter: blur(15px);
+    box-shadow: 0 8px 35px rgba(93,139,71,0.3);
+    padding: 18px 0;
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 1030;
+}
+
+.navbar-brand {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.4rem;
+    font-weight: 900;
+    color: white !important;
+    letter-spacing: 1px;
+}
+
+.nav-link {
+    color: white !important;
+    font-weight: 600;
+    padding: 10px 22px !important;
+    border-radius: 30px;
+    transition: all 0.4s;
+}
+
+.nav-link:hover, .nav-link.active {
+    background: rgba(255,255,255,0.2);
+    color: var(--gold) !important;
+}
+
+/* ==================== HEADER ==================== */
+h1.display-5 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    color: var(--primary-dark);
+    text-shadow: 0 10px 30px rgba(93,139,71,0.2);
+    margin-bottom: 40px;
+}
+
+/* ==================== BOOKING CARDS ==================== */
+.booking-card {
+    border: none;
+    border-radius: 28px;
+    overflow: hidden;
+    background: white;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+    transition: all 0.5s;
+}
+
+.booking-card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 35px 80px rgba(93,139,71,0.25);
+}
+
+.room-img {
+    height: 220px;
+    object-fit: cover;
+    transition: transform 0.6s;
+}
+
+.booking-card:hover .room-img {
+    transform: scale(1.05);
+}
+
+.booking-card .p-4 {
+    padding: 25px;
+}
+
+/* ==================== STATUS BADGE ==================== */
+.status-badge {
+    padding: 8px 20px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.status-badge[style*="background:#ffc107"] { background: var(--warning); }
+.status-badge[style*="background:#28a745"] { background: var(--success); }
+.status-badge[style*="background:#dc3545"] { background: var(--danger); }
+
+/* ==================== BUTTONS ==================== */
+.btn-pay {
+    background: var(--gold);
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: all 0.4s;
+}
+
+.btn-pay:hover {
+    background: var(--gold-dark);
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(212,175,55,0.3);
+}
+
+.btn-cancel {
+    background: #6c757d;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: all 0.4s;
+}
+
+.btn-cancel:hover {
+    background: #5a6268;
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(108,117,125,0.3);
+}
+
+.btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+/* ==================== ALERT MESSAGES ==================== */
+.alert {
+    border-radius: 25px;
+    padding: 20px 30px;
+    font-size: 1.2rem;
+    animation: slide 0.5s ease;
+    margin-bottom: 30px;
+}
+
+.alert-success { background: #d4edda; border: 2px solid var(--success); color: var(--success); }
+.alert-danger { background: #f8d7da; border: 2px solid var(--danger); color: var(--danger); }
+
+@keyframes slide {
+    from { transform: translateY(-30px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 992px) {
+    .room-img { height: 180px; }
+    .booking-card .p-4 { padding: 20px; }
+    .btn-pay, .btn-cancel { font-size: 1rem; padding: 10px 25px; }
+}
+
+@media (max-width: 768px) {
+    h1.display-5 { font-size: 2.5rem; }
+    .room-img { height: 150px; }
+    .booking-card { margin-bottom: 20px; }
+}

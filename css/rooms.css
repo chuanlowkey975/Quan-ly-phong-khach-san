@@ -1,0 +1,326 @@
+/* ============================================================= */
+/*  ROOMS.CSS – TRANG XEM & ĐẶT PHÒNG USER – RESORT 7 SAO 2025   */
+/*  Đã kết hợp hoàn hảo CSS cũ + Modal đặt phòng đẹp như ảnh     */
+/* ============================================================= */
+
+:root {
+    --primary: #5d8b47;
+    --primary-dark: #3d6b2a;
+    --accent: #a8c997;
+    --gold: #d4af37;
+    --gold-dark: #b8972e;
+    --light: #f8fbe8;
+    --gray: #555;
+    --success: #4caf50;
+    --danger: #f44336;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: var(--light);
+    color: #333;
+    padding-top: 90px;
+    line-height: 1.6;
+}
+
+/* ==================== NAVBAR ==================== */
+.navbar-custom {
+    background: rgba(93,139,71,0.98) !important;
+    backdrop-filter: blur(15px);
+    box-shadow: 0 8px 35px rgba(93,139,71,0.3);
+    padding: 18px 0;
+    z-index: 1030;
+}
+
+.navbar-brand {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.4rem;
+    font-weight: 900;
+    color: white !important;
+    letter-spacing: 1px;
+}
+
+.nav-link {
+    color: white !important;
+    font-weight: 600;
+    padding: 10px 22px !important;
+    border-radius: 30px;
+    transition: all 0.4s;
+}
+
+.nav-link:hover, .nav-link.active {
+    background: rgba(255,255,255,0.2);
+    color: var(--gold) !important;
+}
+
+/* ==================== HERO + FILTER ==================== */
+.hero-filter {
+    background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.8)), 
+                    url('../images/resort1.jpg') center/cover no-repeat fixed;
+    padding: 120px 0 80px;
+    color: white;
+}
+
+.hero-filter h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 4.5rem;
+    font-weight: 900;
+    text-shadow: 0 10px 30px rgba(0,0,0,0.6);
+}
+
+.room-count {
+    background: linear-gradient(45deg, var(--gold), #ffed4e);
+    color: #000;
+    padding: 12px 30px;
+    border-radius: 50px;
+    font-weight: 800;
+    font-size: 1.3rem;
+    display: inline-block;
+    box-shadow: 0 10px 30px rgba(212,175,55,0.4);
+}
+
+/* Bộ lọc */
+.filter-card {
+    background: rgba(255,255,255,0.97);
+    backdrop-filter: blur(15px);
+    border-radius: 28px;
+    padding: 30px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+    border: 1px solid rgba(93,139,71,0.1);
+    margin-top: -70px;
+}
+
+.form-label {
+    font-weight: 700;
+    color: var(--primary-dark);
+}
+
+.form-control, .form-select {
+    border-radius: 15px !important;
+    border: 2px solid #ddd;
+    padding: 12px 16px;
+    font-size: 1rem;
+    transition: all 0.3s;
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 0.25rem rgba(93,139,71,0.2);
+}
+
+.btn-filter {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 12px 35px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: all 0.4s;
+}
+
+.btn-filter:hover {
+    background: var(--primary-dark);
+    transform: translateY(-4px);
+    box-shadow: 0 15px 30px rgba(93,139,71,0.3);
+}
+
+.clear-filter {
+    background: #6c757d;
+    color: white;
+    padding: 8px 25px;
+    border-radius: 50px;
+    font-size: 0.9rem;
+}
+
+.clear-filter:hover {
+    background: #5a6268;
+}
+
+/* ==================== DANH SÁCH PHÒNG ==================== */
+.room-card {
+    border: none;
+    border-radius: 28px;
+    overflow: hidden;
+    transition: all 0.5s;
+    background: white;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+}
+
+.room-card:hover {
+    transform: translateY(-20px);
+    box-shadow: 0 35px 80px rgba(93,139,71,0.25);
+}
+
+.room-img {
+    height: 260px;
+    object-fit: cover;
+    transition: transform 0.6s;
+}
+
+.room-card:hover .room-img {
+    transform: scale(1.1);
+}
+
+.price-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: var(--gold);
+    color: #000;
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-weight: 900;
+    font-size: 1.3rem;
+    box-shadow: 0 10px 30px rgba(212,175,55,0.5);
+    z-index: 2;
+}
+
+.price-badge small {
+    font-size: 0.8rem;
+    font-weight: 600;
+    opacity: 0.9;
+}
+
+.card-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    color: var(--primary-dark);
+}
+
+.btn-book {
+    background: var(--primary);
+    color: white;
+    padding: 14px 30px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: all 0.4s;
+    border: none;
+}
+
+.btn-book:hover {
+    background: var(--primary-dark);
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(93,139,71,0.3);
+}
+
+/* ==================== MODAL CHI TIẾT & ĐẶT PHÒNG ==================== */
+.modal-content {
+    border-radius: 25px;
+    overflow: hidden;
+    border: none;
+    box-shadow: 0 30px 100px rgba(0,0,0,0.3);
+}
+
+.modal-header {
+    background: var(--primary-dark);
+    color: white;
+    padding: 25px;
+    border-bottom: none;
+}
+
+.modal-header .btn-close {
+    filter: invert(1);
+    opacity: 0.8;
+}
+
+/* Modal Đặt Phòng – Đẹp đúng như ảnh bạn gửi */
+.booking-modal .modal-header {
+    background: linear-gradient(135deg, var(--primary), var(--success));
+    border-radius: 25px 25px 0 0;
+}
+
+.room-info-header {
+    background: #f0f8f0;
+    border: 3px dashed var(--accent);
+    border-radius: 20px;
+    padding: 18px;
+    margin-bottom: 20px;
+}
+
+.room-thumb {
+    width: 90px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 16px;
+    border: 3px solid white;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+#roomTitle {
+    font-weight: 800;
+    color: var(--primary-dark);
+    font-size: 1.25rem;
+}
+
+#roomPrice {
+    font-size: 1.3rem;
+    font-weight: 900;
+    color: var(--primary);
+}
+
+.total-price-box {
+    background: linear-gradient(135deg, #e8f5e9, #f1f8e9);
+    border: 3px dashed var(--success);
+    border-radius: 18px;
+    padding: 20px;
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--primary-dark);
+    margin: 20px 0;
+}
+
+.total-price-box strong {
+    color: var(--success);
+    font-size: 1.6rem;
+}
+
+/* Flatpickr – Lịch đẹp */
+.flatpickr-calendar {
+    border-radius: 18px !important;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.2) !important;
+}
+
+.flatpickr-day.selected, .flatpickr-day.today {
+    background: var(--primary) !important;
+    border-color: var(--primary) !important;
+}
+
+/* Nút trong modal đặt phòng */
+.booking-modal .btn-success {
+    background: linear-gradient(135deg, var(--success), #66bb6a);
+    border: none;
+    padding: 12px 35px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.booking-modal .btn-success:hover {
+    background: linear-gradient(135deg, #388e3c, #4caf50);
+    transform: translateY(-3px);
+}
+
+.booking-modal .btn-secondary {
+    border-radius: 50px;
+    padding: 12px 30px;
+}
+
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 992px) {
+    .hero-filter h1 { font-size: 3.5rem; }
+    .filter-card { padding: 20px; margin-top: -50px; }
+    .room-img { height: 220px; }
+}
+
+@media (max-width: 768px) {
+    .hero-filter { padding: 100px 0 60px; }
+    .hero-filter h1 { font-size: 2.8rem; }
+    .price-badge { font-size: 1.1rem; padding: 8px 16px; }
+    .btn-book { padding: 12px 25px; font-size: 1rem; }
+    .room-info-header { padding: 15px; }
+    .room-thumb { width: 70px; height: 55px; }
+    .total-price-box { font-size: 1.2rem; padding: 15px; }
+}

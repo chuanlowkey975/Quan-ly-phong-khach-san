@@ -1,0 +1,201 @@
+/* css/user_dashboard.css – USER DASHBOARD ĐẸP + KHÔNG CẦN CUỘN CHUỘT */
+:root {
+    --primary: #5d8b47;
+    --primary-dark: #3d6b2a;
+    --accent: #a8c997;
+    --gold: #d4af37;
+    --gold-dark: #b8972e;
+    --light: #f8fbe8;
+    --gray: #555;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: var(--light);
+    color: #333;
+    min-height: 100vh;
+}
+
+/* Navbar */
+.navbar-custom {
+    background: rgba(93,139,71,0.98) !important;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 8px 32px rgba(93,139,71,0.25);
+    padding: 18px 0;
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 1030;
+}
+
+.navbar-brand {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.3rem;
+    font-weight: 900;
+    color: white !important;
+}
+
+.nav-link {
+    color: white !important;
+    font-weight: 600;
+    padding: 8px 20px !important;
+    border-radius: 30px;
+    transition: all 0.4s;
+}
+
+.nav-link:hover {
+    background: rgba(255,255,255,0.15);
+    color: var(--gold) !important;
+}
+
+.dropdown-menu {
+    border-radius: 15px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.18);
+    margin-top: 10px;
+}
+
+/* Hero – chỉ chiếm 65% màn hình */
+.hero {
+    height: 65vh;
+    min-height: 520px;
+    background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.7)),
+                url('../images/resort1.jpg') center/cover no-repeat fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(93,139,71,0.8), rgba(168,201,151,0.6));
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    animation: fadeInUp 1.2s ease-out;
+}
+
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 5rem;
+    font-weight: 900;
+    color: white;
+    text-shadow: 0 10px 30px rgba(0,0,0,0.6);
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    margin-bottom: 40px;
+    opacity: 0.95;
+}
+
+.btn-book-now {
+    background: var(--gold);
+    color: white;
+    padding: 18px 50px;
+    font-size: 1.35rem;
+    font-weight: 700;
+    border-radius: 50px;
+    border: none;
+    box-shadow: 0 15px 35px rgba(212,175,55,0.4);
+    transition: all 0.5s;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.btn-book-now:hover {
+    background: var(--gold-dark);
+    transform: translateY(-8px);
+    box-shadow: 0 25px 50px rgba(212,175,55,0.5);
+}
+
+/* Features – gọn gàng, đẹp, vừa 1 trang */
+.features {
+    padding: 80px 0 100px;
+    background: white;
+}
+
+.features h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    color: var(--primary-dark);
+    margin-bottom: 15px;
+}
+
+.features .lead {
+    font-size: 1.3rem;
+    color: var(--gray);
+    margin-bottom: 50px;
+}
+
+.feature-card {
+    text-align: center;
+    padding: 40px 25px;
+    background: var(--light);
+    border-radius: 30px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+    transition: all 0.5s;
+    border: 1px solid rgba(93,139,71,0.1);
+    height: 100%;
+}
+
+.feature-card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 30px 70px rgba(93,139,71,0.18);
+    background: white;
+}
+
+.feature-icon {
+    font-size: 4rem;
+    color: var(--primary);
+    margin-bottom: 20px;
+    opacity: 0.15;
+}
+
+.feature-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    color: var(--primary-dark);
+    margin-bottom: 12px;
+    font-weight: 700;
+}
+
+.feature-desc {
+    font-size: 1.05rem;
+    color: var(--gray);
+}
+
+/* Footer */
+.footer {
+    background: var(--primary-dark);
+    color: white;
+    padding: 40px 0 20px;
+    margin-top: 0;
+}
+
+/* Animation */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(50px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .hero h1 { font-size: 3.8rem; }
+    .hero p { font-size: 1.3rem; }
+    .features h2 { font-size: 2.5rem; }
+}
+
+@media (max-width: 768px) {
+    .hero { height: 70vh; }
+    .hero h1 { font-size: 3rem; }
+    .btn-book-now { padding: 15px 40px; font-size: 1.2rem; }
+}

@@ -1,0 +1,203 @@
+/* css/admin_revenue.css – BÁO CÁO DOANH THU – ĐẸP NHƯ KHÁCH SẠN 6 SAO */
+:root {
+    --primary: #5d8b47;
+    --primary-dark: #3d6b2a;
+    --accent: #a8c997;
+    --light: #f8fbe8;
+    --gray: #555;
+    --gold: #ffd700;
+    --gold-dark: #b8860b;
+}
+
+body.revenue-bg {
+    background: linear-gradient(135deg, #f8fbe8 0%, #e8f5e0 50%, #dcedc8 100%);
+    font-family: 'Montserrat', sans-serif;
+    min-height: 100vh;
+    color: #333;
+    padding: 40px 0;
+}
+
+.revenue-container {
+    max-width: 1500px;
+    margin: auto;
+    animation: fadeInUp 0.9s ease-out;
+}
+
+.revenue-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 50px;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.revenue-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.2rem;
+    font-weight: 900;
+    color: var(--primary);
+    margin: 0;
+}
+
+.btn-back {
+    background: white;
+    color: var(--primary);
+    border: 2px solid var(--primary);
+    padding: 14px 35px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: all 0.4s;
+}
+
+.btn-back:hover {
+    background: var(--primary);
+    color: white;
+    transform: translateY(-4px);
+    box-shadow: 0 15px 30px rgba(93,139,71,0.3);
+}
+
+.total-revenue-card {
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    color: white;
+    border-radius: 40px;
+    padding: 50px 30px;
+    text-align: center;
+    box-shadow: 0 25px 60px rgba(93,139,71,0.3);
+    margin-bottom: 50px;
+    position: relative;
+    overflow: hidden;
+}
+
+.total-revenue-card::before {
+    content: '';
+    position: absolute;
+    top: -50%; left: -50%;
+    width: 200%; height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 70%);
+    animation: shine 8s infinite;
+}
+
+@keyframes shine {
+    0% { transform: translateX(-100%) translateY(-100%) rotate(30deg); }
+    100% { transform: translateX(100%) translateY(100%) rotate(30deg); }
+}
+
+.total-revenue-card h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    opacity: 0.9;
+}
+
+.total-amount {
+    font-size: 4.5rem;
+    font-weight: 900;
+    letter-spacing: 2px;
+    text-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    color: var(--gold);
+}
+
+.total-label {
+    font-size: 1.3rem;
+    margin-top: 10px;
+    opacity: 0.9;
+}
+
+.chart-card, .top-types-card {
+    background: white;
+    border-radius: 32px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.12);
+    border: 1px solid rgba(93,139,71,0.1);
+    margin-bottom: 30px;
+}
+
+.card-header-revenue {
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    color: white;
+    padding: 25px 30px;
+    text-align: center;
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+
+.chart-body {
+    padding: 30px;
+    background: #f8fbe8;
+}
+
+#monthlyRevenueChart {
+    border-radius: 20px;
+    background: white;
+    padding: 20px;
+}
+
+.top-types-list {
+    padding: 20px;
+}
+
+.type-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    margin-bottom: 15px;
+    border-radius: 20px;
+    transition: all 0.4s;
+    background: #f8fbe8;
+    border-left: 6px solid var(--primary);
+}
+
+.type-item:hover {
+    transform: translateX(10px);
+    box-shadow: 0 15px 40px rgba(93,139,71,0.2);
+    background: white;
+}
+
+.type-item.gold {
+    background: linear-gradient(135deg, #ffd700, #ffed4e);
+    color: #333;
+    font-weight: 700;
+    border-left: 6px solid var(--gold-dark);
+}
+
+.type-name {
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.type-count {
+    font-size: 1.1rem;
+    opacity: 0.8;
+}
+
+.type-revenue {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--primary-dark);
+}
+
+.empty-state {
+    text-align: center;
+    padding: 80px 20px;
+    color: var(--gray);
+}
+
+.empty-state i {
+    font-size: 5rem;
+    color: #ccc;
+    margin-bottom: 20px;
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 992px) {
+    .revenue-title { font-size: 2.6rem; text-align: center; }
+    .revenue-header { flex-direction: column; }
+    .total-amount { font-size: 3.5rem; }
+    .type-item { flex-direction: column; text-align: center; gap: 10px; }
+}
