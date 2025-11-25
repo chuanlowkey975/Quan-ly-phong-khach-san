@@ -19,4 +19,5 @@
 
 
 </div>
-Do ảnh quá nhiều dung lượng để chạy bài hãy tải về và tạo folder images rồi cho ảnh vào.
+
+
